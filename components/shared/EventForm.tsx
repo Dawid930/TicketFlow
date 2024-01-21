@@ -292,6 +292,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                       type="number"
                       placeholder="Price"
                       {...field}
+                      disabled={form.getValues("isFree")}
                       className="p-regular-16 border-0 bg-grey-50 outline-offset-0 focus:border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     />
                     <FormField
@@ -312,6 +313,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                                 className="mr-2 h-5 w-5 border-2 border-primary-500"
                                 onCheckedChange={field.onChange}
                                 checked={field.value}
+                                disabled={form.getValues("price") !== ""}
                               />
                             </div>
                           </FormControl>
